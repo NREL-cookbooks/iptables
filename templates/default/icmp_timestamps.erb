@@ -1,2 +1,3 @@
+# Disable ICMP timestamp requests (per Cyber Security)
 -A INPUT -p icmp --icmp-type timestamp-request -j DROP
 -A OUTPUT -p icmp --icmp-type timestamp-reply -j DROP
