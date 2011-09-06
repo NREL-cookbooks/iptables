@@ -1,0 +1,2 @@
+# Allow PostgreSQL connections to the test instance running on port 5433
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 5433 -j ACCEPT

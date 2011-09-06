@@ -1,0 +1,4 @@
+# Allow NRPE connections on port 5666 from the opsview server.
+<% @monitoring_servers.each do |server| %>
+-A INPUT -m state --state NEW -m tcp -p tcp --source <%= server[:ipaddress] %> --dport 5666 -j ACCEPT
+<% end %>
