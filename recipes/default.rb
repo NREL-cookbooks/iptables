@@ -38,9 +38,7 @@ when "redhat", "centos"
   iptables_save_file = "/etc/sysconfig/iptables"
 when "ubuntu", "debian"
   iptables_save_file = "/etc/iptables/general"
-end
 
-if platform?("debian", "ubuntu")
   template "/etc/network/if-pre-up.d/iptables_load" do
     source "iptables_load.erb"
     mode 0755
@@ -48,7 +46,6 @@ if platform?("debian", "ubuntu")
   end
 end
 
+
 iptables_rule "all_established"
 iptables_rule "all_icmp"
-iptables_rule "icmp_timestamps"
-iptables_rule "ssh"
