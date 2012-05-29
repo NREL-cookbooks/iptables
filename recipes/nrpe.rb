@@ -7,6 +7,8 @@
 # All rights reserved - Do Not Redistribute
 #
 
+include_recipe "iptables"
+
 monitoring_servers = search(:node, 'roles:monitoring')
 
 iptables_rule "nrpe" do

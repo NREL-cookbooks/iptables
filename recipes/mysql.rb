@@ -7,5 +7,7 @@
 # All rights reserved - Do Not Redistribute
 #
 
+include_recipe "iptables"
+
 iptables_rule "mysql"
 

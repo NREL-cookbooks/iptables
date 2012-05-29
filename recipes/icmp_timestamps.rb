@@ -1,12 +1,12 @@
 #
 # Cookbook Name:: iptables
-# Recipe:: postgresql
+# Recipe:: icmp_timestamps
 #
-# Copyright 2011, NREL
+# Copyright 2012, NREL
 #
 # All rights reserved - Do Not Redistribute
 #
 
 include_recipe "iptables"
 
-iptables_rule "postgresql"
+iptables_rule "icmp_timestamps"
