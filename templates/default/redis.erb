@@ -1,0 +1,4 @@
+# Allow Redis connections on port 6379
+<% node[:iptables][:redis][:allowed_hosts].each do |host| %>
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 6379 -s <%= host %> -j ACCEPT
+<% end %>

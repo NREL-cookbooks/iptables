@@ -1,0 +1,4 @@
+# Allow MongoDB connections on port 27017
+<% node[:iptables][:mongodb][:allowed_hosts].each do |host| %>
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 27017 -s <%= host %> -j ACCEPT
+<% end %>

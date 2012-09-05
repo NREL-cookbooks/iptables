@@ -1,0 +1,2 @@
+# Allow HTTP on port 8888 for the Jasmine testing server
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 8888 -j ACCEPT
