@@ -1,0 +1,3 @@
+# Allow TorqueBox cluster communication
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 7600 -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 5445 -j ACCEPT
