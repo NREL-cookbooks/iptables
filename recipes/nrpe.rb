@@ -9,8 +9,12 @@
 
 include_recipe "iptables"
 
-monitoring_servers = search(:node, 'roles:monitoring')
+if Chef::Config[:solo]
+  Chef::Log.warn("This recipe uses search. Chef Solo does not support search.")
+else
+  monitoring_servers = search(:node, 'roles:monitoring')
 
-iptables_rule "nrpe" do
-  variables :monitoring_servers => monitoring_servers
+  iptables_rule "nrpe" do
+    variables :monitoring_servers => monitoring_servers
+  end
 end
